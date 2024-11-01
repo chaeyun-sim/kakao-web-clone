@@ -27,7 +27,7 @@ const Content = styled.main`
   width: 100%;
   max-width: 1712px;
   margin: 0 auto;
-	padding-top: 92px;
+  padding-top: 92px;
 
   ${mediaQuery.large`
     max-width: 1316px;
@@ -45,7 +45,7 @@ const Content = styled.main`
   `}
 
   ${mediaQuery.xsmall`
-    max-width: 384px;
+    max-width: 495px;
 		padding-top: 72px;
   `}
 `;
