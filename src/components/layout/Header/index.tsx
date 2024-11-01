@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import mediaQuery from '../../../utils/mediaQuery';
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const isMobileScreen = useMediaQuery({ maxWidth: 1023 })
@@ -9,14 +9,24 @@ const Header = () => {
   const iconSize = isMobileScreen ? 28 : 24
 
   const [hoveredItem, setHoveredItem] = useState('')
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const listItemColor = (item: string) =>
+    hoveredItem === item || !hoveredItem ? 'black' : 'gray';
 
   const handleMouseHover = (item: string) => setHoveredItem(item)
   const handleMouseOut = () => setHoveredItem('')
-
-  const listItemColor = (item: string) => hoveredItem === item || !hoveredItem ? 'black' : 'gray'
+  const handleScroll = () => setIsScrolled(window.scrollY > 0);
 
   return (
-    <HeaderContainer>
+    <HeaderContainer isScrolled={isScrolled}>
       <HeaderContent>
         <LogoArea>
           <Logo src="/icons/logo.svg" alt="logo" />
@@ -69,11 +79,13 @@ const Header = () => {
 
 export default Header;
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled.header<{ isScrolled: boolean }>`
   width: 100%;
   height: 92px;
   position: fixed;
   background-color: white;
+  border-bottom: ${({ isScrolled, theme }) =>
+    isScrolled ? `1px solid ${theme.color.gray[200]}` : 'none'};
 
   ${mediaQuery.large`
 		height: 92px;
@@ -93,10 +105,10 @@ const HeaderContainer = styled.header`
 `;
 
 const HeaderContent = styled.div`
-	height: 100%;
+  height: 100%;
   max-width: 1712px;
   margin: 0 auto;
-	position: relative;
+  position: relative;
 
   ${mediaQuery.large`
     max-width: 1316px;

@@ -20,14 +20,13 @@ export default Layout;
 
 const Container = styled.div`
   width: 100%;
-  min-height: 100dvh;
 `;
 
 const Content = styled.main`
   width: 100%;
+  min-height: calc(100dvh - var(--header-height, 84px));
   max-width: 1712px;
   margin: 0 auto;
-  padding-top: 92px;
 
   ${mediaQuery.large`
     max-width: 1316px;
