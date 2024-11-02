@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Accordion from '../../common/Accordion/Accordion';
 import { CopyRight, FooterContainer, GroupInfo, InnerFooter, LinkInfo, ListItem, MainServiceBox, PlusIcon, RelatedSiteBox, RelationSection, ServiceBox, ServiceList, ServiceSection, SubTitle, WrapInfo } from './index.styles';
+import Icon from '../../common/Icon';
 
 const Footer = () => {
 	const isSmallScreen = useMediaQuery({ maxWidth: 1023 });
@@ -122,15 +123,13 @@ const Footer = () => {
                   >
                     {item.value}
                     {item.hasIcon && (
-                      <img
-                        src={
+                      <Icon
+                        iconName={
                           isHovered(`service-${item.value}`)
-                            ? '/icons/to-top.svg'
-                            : '/icons/to-bottom.svg'
+                            ? 'to-top'
+                            : 'to-bottom'
                         }
-                        alt=""
-                        width={9}
-                        height={9}
+                        size={9}
                         style={{
                           marginLeft: '4px',
                         }}

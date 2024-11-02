@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { useAccordion } from './context';
+import Icon from '../Icon';
 
 interface IProps {
 	isFirstItem?: boolean;
@@ -12,10 +13,9 @@ const Trigger = ({ children, isFirstItem = false }: PropsWithChildren<IProps>) =
 	return (
     <Container onClick={toggle} isFirstItem={isFirstItem} isOpen={isOpen}>
       {children}
-      <img
-        src={isOpen ? '/icons/to-top.svg' : '/icons/to-bottom.svg'}
-        width={14}
-        height={14}
+      <Icon
+        iconName={isOpen ? '/to-top' : '/to-bottom'}
+        size={14}
         style={{
           position: 'absolute',
           right: 0,
