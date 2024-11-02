@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" class="ico_arrow">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M0 0H9V9H0z" transform="translate(-891 -972) translate(670 145) translate(24 817) translate(142 4) translate(55 6)"></path>
+    <path stroke="black" d="M1 6L4.5 3 8 6" transform="translate(-891 -972) translate(670 145) translate(24 817) translate(142 4) translate(55 6)" class="stroke"></path>
+  </g>
+</svg>

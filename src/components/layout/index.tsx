@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import mediaQuery from '../../utils/mediaQuery';
 import Header from './Header';
+import Footer from './Footer';
 
 interface IProps {
   children: ReactNode;
@@ -12,6 +13,7 @@ const Layout = ({ children }: IProps) => {
 		<Container>
 			<Header />
       <Content>{children}</Content>
+      <Footer />
     </Container>
   );
 };
