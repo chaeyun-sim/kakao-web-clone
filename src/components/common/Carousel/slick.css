@@ -1,0 +1,25 @@
+.slick-slider {
+  height: 100% !important;
+	border-radius: 24px;
+}
+
+.slick-list {
+  height: 100% !important;
+}
+
+.slick-track {
+  height: 100% !important;
+  display: flex !important;
+}
+
+.slick-slide {
+  height: 100% !important;
+}
+
+.slick-slide > div {
+  height: 100% !important;
+}
+
+.slick-slide.slick-active {
+  z-index: 1;
+}
