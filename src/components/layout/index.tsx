@@ -46,7 +46,7 @@ const Content = styled.main`
   `}
 
   ${mediaQuery.xsmall`
-    max-width: 495px;
+    max-width: 384px;
 		padding-top: 72px;
   `}
 `;
