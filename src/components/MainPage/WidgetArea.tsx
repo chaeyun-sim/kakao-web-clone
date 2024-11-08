@@ -11,6 +11,18 @@ const WidgetArea = () => {
       <FirstWidget>
         <Carousel>
           <Carousel.Item>
+            <img
+              src="https://t1.kakaocdn.net/thumb/C544x544.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fwidget%2Fe6c6c04d019200001.png"
+              alt="kakao calendar logo"
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+              }}
+            ></img>
+            <Carousel.Navigation isFirst />
+          </Carousel.Item>
+          <Carousel.Item>
             <div
               style={{
                 width: '100%',
@@ -31,7 +43,11 @@ const WidgetArea = () => {
                       {str === ',' ? (
                         <span>,</span>
                       ) : (
-                        <RollingNumber targetNumber={Number(str) + 10} duration={1000} delay={i * 250} />
+                        <RollingNumber
+                          targetNumber={Number(str) + 10}
+                          duration={1000}
+                          delay={i * 250}
+                        />
                       )}
                     </SingleNumber>
                   ))}
@@ -40,18 +56,6 @@ const WidgetArea = () => {
               </div>
               <Carousel.Navigation isFirst />
             </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              src="https://t1.kakaocdn.net/thumb/C544x544.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fwidget%2Fe6c6c04d019200001.png"
-              alt="kakao calendar logo"
-              style={{
-                objectFit: 'cover',
-                width: '100%',
-                height: '100%',
-              }}
-            ></img>
-            <Carousel.Navigation isFirst />
           </Carousel.Item>
           <Carousel.Item>
             <img
