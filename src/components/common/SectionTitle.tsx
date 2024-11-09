@@ -14,7 +14,7 @@ const SectionTitle = ({ children, text, iconUrl }: PropsWithChildren<IProps>) =>
   return (
     <Title>
       {!isMobileScreen && <StoryTitleIcon src={iconUrl} alt="" />}
-      <span style={{ padding: isMobileScreen ? '0 14px' : 0 }}>{text}</span>
+      {text}
       {children}
     </Title>
   );
@@ -51,8 +51,7 @@ export const Title = styled.h3`
 
   ${mediaQuery.xsmall`
     width: 100%;
-    max-width: 370px;
-    padding: 0 14px;
+    padding: 0;
     margin: 0;
     font-size: 26px;
     line-height: 36px;
