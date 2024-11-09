@@ -22,6 +22,7 @@ export default Layout;
 
 const Container = styled.div`
   width: 100%;
+  overflow: hidden;
 `;
 
 const Content = styled.main`
