@@ -5,7 +5,8 @@ import { stories } from '../../constants/stories';
 import Card from '../common/Card/Card';
 
 const StoryArea = () => {
-	const isMobileScreen = useMediaQuery({ maxWidth: 767 });
+  const isMobileScreen = useMediaQuery({ maxWidth: 767 });
+  const isMedium = useMediaQuery({ maxWidth: 1439 });
   const [stopPlaying, setStopPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -17,6 +18,21 @@ const StoryArea = () => {
     setStopPlaying(true)
   }, [])
 
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const handleTransitionEnd = () => {
+      saveCurrentPosition();
+      setStopPlaying(false);
+    };
+
+    slider.addEventListener('transitionend', handleTransitionEnd);
+    return () => {
+      slider.removeEventListener('transitionend', handleTransitionEnd);
+    };
+  }, []);
+  
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!sliderRef.current) return;
 
@@ -40,7 +56,7 @@ const StoryArea = () => {
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    saveCurrentPosition();
+     saveCurrentPosition();
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -93,26 +109,42 @@ const StoryArea = () => {
         currentPosition={isDragging ? translateX : currentPosition}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
+        onMouseEnter={() => {
+          setStopPlaying(true);
+          saveCurrentPosition();
+        }}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
         style={{
           cursor: isDragging ? 'grabbing' : 'pointer',
         }}
       >
-        {[...stories, ...stories, ...stories].map((story, index) => (
-          <Card key={`${story.title}-${index}`}>
-            <Card.Wrapper>
-              <Card.Header
-                imageUrl={story.badgeImageUrl}
-                badgeText={story.badgeText}
-              />
-              <Card.Content {...story} />
-              <Card.Tags {...story} />
-            </Card.Wrapper>
-            <Card.Trigger />
-            <Card.Menu />
-          </Card>
-        ))}
+        {Array.from({ length: 10 }, (_, groupIndex) =>
+          stories.map((story, index) => (
+            <Card key={`${story.title}-${groupIndex}-${index}`} largeSize={story.largeSize}>
+              {!isMedium && story.largeSize === 'imageTop' && (
+                <Card.Image imageUrl={story.imageUrl} largeSize={'imageTop'} />
+              )}
+              <Card.Wrapper>
+                <Card.Header
+                  imageUrl={story.badgeImageUrl}
+                  badgeText={story.badgeText}
+                />
+                <Card.Content {...story}>
+                  {(isMedium || story.largeSize === 'imageBottom') && (
+                    <Card.Image
+                      imageUrl={story.imageUrl}
+                      largeSize={'imageBottom'}
+                    />
+                  )}
+                </Card.Content>
+                <Card.Tags {...story} />
+                <Card.Trigger />
+              </Card.Wrapper>
+              <Card.Menu />
+            </Card>
+          )),
+        )}
       </SlideWrapper>
     </Container>
   );

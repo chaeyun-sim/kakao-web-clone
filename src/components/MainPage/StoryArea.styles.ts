@@ -2,22 +2,22 @@ import styled, { css } from 'styled-components';
 import mediaQuery from '../../utils/mediaQuery';
 
 export const Container = styled.div`
-  margin-top: 200px;
   margin: 0 auto;
+  padding-top: 200px;
   font-size: 14px;
   line-height: 1.5;
   color: ${({ theme }) => theme.color.gray[500]};
 
   ${mediaQuery.large`
-    margin-top: 12px;
+    padding-top: 120px;
   `}
 
   ${mediaQuery.medium`
-    margin-top: 80px;
+    padding-top: 80px;
   `}
 
   ${mediaQuery.xsmall`
-    margin: 80px -14px 0px;
+    margin: 0px -14px 0px;
   `}
 `;
 

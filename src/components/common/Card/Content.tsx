@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 import mediaQuery from '../../../utils/mediaQuery';
+import { PropsWithChildren } from 'react';
 
 interface IProps {
 	title: string;
-	imageUrl: string;
 }
 
-const Content = ({ title, imageUrl }: IProps) => {
+const Content = ({ title, children }: PropsWithChildren<IProps>) => {
   return (
     <CardContent>
       <Title>{title}</Title>
-      <ImageWrapper>
-        <Image src={imageUrl} alt="" />
-      </ImageWrapper>
+			{children}
     </CardContent>
   );
 };
@@ -80,46 +78,3 @@ const Title = styled.strong`
 		margin-top: 8px;
 	`}
 `;
-
-const ImageWrapper = styled.span`
-	height: 234px;
-	margin-top: 107px;
-	position: relative;
-	display: block;
-
-	${mediaQuery.large`
-		height: 179px;
-		margin-top: 75px;
-	`}
-
-	${mediaQuery.medium`
-		height: 174px;
-		margin-top: 63px;
-	`}
-
-	${mediaQuery.small`
-		height: 130px;
-		margin-top: 53px;
-	`}
-
-	${mediaQuery.xsmall`
-		margin-top: 59px;
-		height: auto;
-	`}
-`
-
-const Image = styled.img`
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	display: block;
-	height: 100%;
-	min-width: 100%;
-
-	${mediaQuery.xsmall`
-		position: static;
-		transform: none;
-		height: auto;
-		width: 100%;
-	`}
-`

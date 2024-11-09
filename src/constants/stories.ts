@@ -1,9 +1,10 @@
 type Story = {
-	badgeImageUrl: string;
-	badgeText: string;
-	title: string;
-	imageUrl: string;
-	tagList: string[];
+  badgeImageUrl: string;
+  badgeText: string;
+  title: string;
+  imageUrl: string;
+  tagList: string[];
+  largeSize: 'imageTop' | 'imageBottom';
 };
 
 export const stories: Story[] = [
@@ -15,6 +16,7 @@ export const stories: Story[] = [
     tagList: ['소상공인지원', '카카오상생활동'],
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Farchives%2F36203767018e00001.jpeg',
+    largeSize: 'imageTop',
   },
   {
     badgeImageUrl:
@@ -24,6 +26,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fnumeral%2Fb70b3d39018b00001.png',
     tagList: ['디지털전환', '카카오톡채널'],
+    largeSize: 'imageBottom',
   },
   {
     badgeImageUrl:
@@ -33,6 +36,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Farchives%2F1a81e34d018900001.png',
     tagList: ['카카오모빌리티', '파트너상생'],
+    largeSize: 'imageTop',
   },
   {
     badgeImageUrl:
@@ -42,6 +46,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Farchives%2F85d56931018c00001.jpg',
     tagList: ['ESG', 'ESG보고서', '약속과책임', '카카오'],
+    largeSize: 'imageBottom',
   },
   {
     badgeImageUrl:
@@ -51,6 +56,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Farchives%2F85ce8331018c00001.jpg',
     tagList: ['조승연의탐구생활', '카카오톡', '카톡이지'],
+    largeSize: 'imageTop',
   },
   {
     badgeImageUrl:
@@ -60,6 +66,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fhistory%2F90869969018c00001.png',
     tagList: ['지도플랫폼', '카카오맵', '트렌드랭킹'],
+    largeSize: 'imageTop',
   },
   {
     badgeImageUrl:
@@ -69,6 +76,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fnumeral%2F8acd369b018c00001.png',
     tagList: ['K콘텐츠', '웹소설', '웹툰'],
+    largeSize: 'imageBottom',
   },
   {
     badgeImageUrl:
@@ -78,6 +86,7 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Farchives%2F85b76b14018c00001.jpg',
     tagList: ['로드트립', '카카오톡', '카톡이지'],
+    largeSize: 'imageTop',
   },
   {
     badgeImageUrl:
@@ -87,5 +96,6 @@ export const stories: Story[] = [
     imageUrl:
       'https://t1.kakaocdn.net/thumb/C630x354.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Farchives%2F85c1a2dc018c00001.jpg',
     tagList: ['디지털접근성', '카카오톡', '카톡이지'],
+    largeSize: 'imageBottom',
   },
 ];

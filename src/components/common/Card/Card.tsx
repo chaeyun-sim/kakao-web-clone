@@ -8,14 +8,23 @@ import styled from 'styled-components';
 import mediaQuery from '../../../utils/mediaQuery';
 import Wrapper from './Wrapper';
 import Trigger from './Trigger';
+import Image from './Image';
+import { useMediaQuery } from 'react-responsive';
 
-const Card = ({children}: PropsWithChildren) => {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface IProps {
+  largeSize?: 'imageTop' | 'imageBottom'
+}
 
-	return (
+const Card = ({ children, largeSize }: PropsWithChildren<IProps>) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMedium = useMediaQuery({ maxWidth: 1023})
+
+  return (
     <CardContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
       <Container>
-        <InnerContainer>{children}</InnerContainer>
+        <InnerContainer largeSize={largeSize} isMedium={isMedium}>
+          {children}
+        </InnerContainer>
       </Container>
     </CardContext.Provider>
   );
@@ -27,6 +36,7 @@ Card.Content = Content;
 Card.Menu = Menu;
 Card.Wrapper = Wrapper;
 Card.Trigger = Trigger;
+Card.Image = Image;
 
 export default Card;
 
@@ -61,20 +71,22 @@ const Container = styled.div`
 	`}
 `;
 
-const InnerContainer = styled.div`
-	overflow: hidden;
-	box-sizing: border-box;
-	position: relative;
-	background-color: ${({ theme }) => theme.color.gray[100]};
-	width: 100%;
-	height: 100%;
-	border-radius: 24px;
+const InnerContainer = styled.div<
+  Pick<IProps, 'largeSize'> & { isMedium: boolean }
+>`
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  background-color: ${({ theme }) => theme.color.gray[100]};
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
 
-	${mediaQuery.medium`
+  ${mediaQuery.medium`
 		border-radius: 16px;
 	`}
 
-	${mediaQuery.xsmall`
+  ${mediaQuery.xsmall`
 		height: auto;
 	`}
-`
+`;
