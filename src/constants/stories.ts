@@ -1,4 +1,4 @@
-type Story = {
+export type Story = {
   badgeImageUrl: string;
   badgeText: string;
   title: string;

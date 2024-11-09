@@ -1,31 +1,6 @@
 import styled from 'styled-components';
 import mediaQuery from '../../utils/mediaQuery';
 
-export const Container = styled.div`
-	padding-top: 200px;
-	max-width: 1712px;
-	margin: 0 auto;
-
-	${mediaQuery.large`
-		padding-top: 120px;
-		max-width: 1316px;
-	`}
-
-	${mediaQuery.medium`
-		margin-top: 80px;
-		max-width: 948px;
-	`}
-
-	${mediaQuery.small`
-		max-width: 712px;
-		margin-top: 80px;
-	`}
-
-	${mediaQuery.xsmall`
-		max-width: 384px;
-	`}
-`
-
 export const InnerService = styled.div`
 	margin-top: 60px;
 
@@ -39,15 +14,16 @@ export const InnerService = styled.div`
 `
 
 export const ServiceList = styled.ul`
-	display: flex;
-	flex-wrap: wrap;
-	margin: -16px 0 0 -16px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -16px 0 0 -16px;
+  padding: 0;
 
-	${mediaQuery.medium`
+  ${mediaQuery.medium`
 		margin: -12px 0 0 -12px;
 	`}
 
-	${mediaQuery.small`
+  ${mediaQuery.small`
 		margin: -8px 0 0 -8px;
 	`}
 
@@ -138,6 +114,10 @@ export const ServiceIcon = styled.a`
 	border-radius: 12px;
 	cursor: pointer;
 
+	&:first-child {
+		margin-left: 0;
+	}
+
 	${mediaQuery.medium`
 		width: 46px;
 		height: 46px;
@@ -149,7 +129,7 @@ export const ServiceIcon = styled.a`
 	`}
 
 	${mediaQuery.xsmall`
-		margin-left: 0;
+		margin-left: 4px;
 	`}
 `
 

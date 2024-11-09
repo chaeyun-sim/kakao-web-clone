@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { Container, PlayIcon, PlayIconWrapper, SlideWrapper } from './StoryArea.styles';
+import { PlayIcon, PlayIconWrapper, SlideWrapper } from './StoryArea.styles';
 import { useMediaQuery } from 'react-responsive';
 import { stories } from '../../constants/stories';
 import Card from '../common/Card/Card';
 import SectionTitle from '../common/SectionTitle';
+import { SectionContainer } from './comon.styles';
 
 const StoryArea = () => {
   const isMobileScreen = useMediaQuery({ maxWidth: 767 });
-  const isMedium = useMediaQuery({ maxWidth: 1439 });
   const [stopPlaying, setStopPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -82,7 +82,7 @@ const StoryArea = () => {
   }
 	
 	return (
-    <Container>
+    <SectionContainer>
       <SectionTitle
         text="카카오와 카카오 그룹이 축적해 온 이야기들"
         iconUrl="https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/ico_archives.gif"
@@ -119,24 +119,12 @@ const StoryArea = () => {
             <Card
               key={`${story.title}-${groupIndex}-${index}`}
               largeSize={story.largeSize}
+              cardData={story}
             >
-              {!isMedium && story.largeSize === 'imageTop' && (
-                <Card.Image imageUrl={story.imageUrl} largeSize={'imageTop'} />
-              )}
               <Card.Wrapper>
-                <Card.Header
-                  imageUrl={story.badgeImageUrl}
-                  badgeText={story.badgeText}
-                />
-                <Card.Content {...story}>
-                  {(isMedium || story.largeSize === 'imageBottom') && (
-                    <Card.Image
-                      imageUrl={story.imageUrl}
-                      largeSize={'imageBottom'}
-                    />
-                  )}
-                </Card.Content>
-                <Card.Tags {...story} />
+                <Card.Header />
+                <Card.Content />
+                <Card.Tags />
                 <Card.Trigger />
               </Card.Wrapper>
               <Card.Menu />
@@ -144,7 +132,7 @@ const StoryArea = () => {
           )),
         )}
       </SlideWrapper>
-    </Container>
+    </SectionContainer>
   );
 };
 
