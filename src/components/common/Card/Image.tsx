@@ -1,46 +1,50 @@
 import styled from 'styled-components';
 import mediaQuery from '../../../utils/mediaQuery';
+import { useCardContext } from './context';
 
 interface IProps {
-	imageUrl: string;
-	largeSize: 'imageTop' | 'imageBottom'
+  largeSize: 'imageTop' | 'imageBottom';
 }
 
-const Image = ({ imageUrl, largeSize }: IProps) => {
+const Image = ({ largeSize }: IProps) => {
+	const { isFromNews, data } = useCardContext();
+
   return (
-    <ImageWrapper largeSize={largeSize}>
-      <ImageBox src={imageUrl} alt="" largeSize={largeSize} />
+    <ImageWrapper largeSize={largeSize} isFromNews={isFromNews!}>
+      <ImageBox src={data.imageUrl} alt="" largeSize={largeSize} />
     </ImageWrapper>
   );
 };
 
 export default Image;
 
-const ImageWrapper = styled.span<Pick<IProps, 'largeSize'>>`
-  height: 234px;
-  margin-top: ${({ largeSize }) =>
-    largeSize === 'imageBottom' ? '107px' : '0px'};
+type TProps = Pick<IProps, 'largeSize'> & { isFromNews: boolean };
+
+const ImageWrapper = styled.span<TProps>`
+  height: ${({ isFromNews }) => (isFromNews ? '314px' : '234px')};
+  margin-top: ${({ largeSize, isFromNews }) =>
+    largeSize === 'imageBottom' ? (isFromNews ? '179px' : '107px') : '0px'};
   position: relative;
   display: block;
 
   ${mediaQuery.large`
-		height: 179px;
-		margin-top: ${({ largeSize }: Pick<IProps, 'largeSize'>) => (largeSize === 'imageBottom' ? '75px' : '0px')};
+		height: ${({ isFromNews }: TProps) => (isFromNews ? '249px' : '179px')};
+		margin-top: ${({ largeSize, isFromNews }: TProps) => (largeSize === 'imageBottom' ? (isFromNews ? '190px' : '75px') : '0px')};
 	`}
 
   ${mediaQuery.medium`
-		height: 174px;
-		margin-top: 63px;
+		height: ${({ isFromNews }: TProps) => (isFromNews ? '178px' : '174px')};
+		margin-top: ${({ isFromNews }: TProps) => (isFromNews ? '120px' : '63px')};
 	`}
 
 	${mediaQuery.small`
-		height: 130px;
-		margin-top: 53px;
+		height: ${({ isFromNews }: TProps) => (isFromNews ? '199px' : '130px')};
+		margin-top: ${({ isFromNews }: TProps) => (isFromNews ? '56px' : '53px')};
 	`}
 
 	${mediaQuery.xsmall`
 		margin-top: 59px;
-		height: 141px;
+		height: ${({ isFromNews }: TProps) => (isFromNews ? 'auto' : '141px')};
 	`}
 `;
 
@@ -56,7 +60,6 @@ const ImageBox = styled.img<Pick<IProps, 'largeSize'>>`
   ${mediaQuery.xsmall`
 		position: static;
 		transform: none;
-		height: auto;
 		width: 100%;
 	`}
 `;

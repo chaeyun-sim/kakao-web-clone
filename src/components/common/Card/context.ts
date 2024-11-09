@@ -1,8 +1,12 @@
 import { createContext, useContext } from 'react';
+import { Story } from '../../../constants/stories';
 
-interface CardContextType {
+export interface CardContextType {
   isMenuOpen: boolean;
-  setIsMenuOpen: (value: boolean) => void;
+  onOpenMenu: () => void;
+  onCloseMenu: () => void;
+  isFromNews?: boolean;
+  data: Story & {date?: string};
 }
 
 export const CardContext = createContext<CardContextType | undefined>(undefined);

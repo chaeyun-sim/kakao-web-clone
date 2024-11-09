@@ -1,20 +1,25 @@
 import styled from 'styled-components';
 import mediaQuery from '../../../utils/mediaQuery';
+import { useCardContext } from './context';
 
-interface IProps {
-  tagList: string[]
-}
+const Tags = () => {
+  const { data, isFromNews } = useCardContext();
 
-const Tags = ({tagList}: IProps) => {
-  return <TagWrapper>{tagList.map(tag => <Tag key={tag}>#{tag}</Tag>)}</TagWrapper>;
+  return (
+    <TagWrapper isFromNews={isFromNews!}>
+      {data.tagList.map(tag => (
+        <Tag key={tag}>#{tag}</Tag>
+      ))}
+    </TagWrapper>
+  );
 };
 
 export default Tags;
 
-const TagWrapper = styled.span`
+const TagWrapper = styled.span<{ isFromNews: boolean }>`
   position: absolute;
   overflow: hidden;
-  top: 247px;
+  top: ${({ isFromNews }) => (isFromNews ? '320px' : '247px')};
   left: 40px;
   right: 40px;
   height: 26px;
@@ -24,13 +29,13 @@ const TagWrapper = styled.span`
   white-space: normal;
 
   ${mediaQuery.large`
-    top: 214px;
+    top: ${({ isFromNews }: { isFromNews: boolean }) => (isFromNews ? '320px' : '214px')};
     left: 30px;
     right: 30px;
   `}
 
   ${mediaQuery.medium`
-    top: 153px;
+    top: ${({ isFromNews }: { isFromNews: boolean }) => (isFromNews ? '200px' : '153px')};
     left: 24px;
     right: 24px;
   `}
@@ -61,6 +66,7 @@ const Tag = styled.span`
   ${mediaQuery.medium`
     margin-right: 8px;
     letter-spacing: -0.5px;
+    font-size: 14px;
   `}
 
   ${mediaQuery.small`

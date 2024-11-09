@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 import mediaQuery from '../../../utils/mediaQuery';
-import { PropsWithChildren } from 'react';
+import { useCardContext } from './context';
+import Image from './Image';
+import { useMediaQuery } from 'react-responsive';
 
-interface IProps {
-	title: string;
-}
+const Content = () => {
+	const { data } = useCardContext();
+	const isMedium = useMediaQuery({ maxWidth: 1439})
 
-const Content = ({ title, children }: PropsWithChildren<IProps>) => {
   return (
     <CardContent>
-      <Title>{title}</Title>
-			{children}
+      <Title>{data.title}</Title>
+      {(data.largeSize === 'imageBottom' ||
+        data.largeSize === 'imageTop' && isMedium) && (
+          <Image largeSize={'imageBottom'} />
+        )}
     </CardContent>
   );
 };

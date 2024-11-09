@@ -5,7 +5,7 @@ import Icon from '../Icon';
 import { useState } from 'react';
 
 const Menu = () => {
-  const { isMenuOpen, setIsMenuOpen } = useCardContext();
+  const { isMenuOpen, onCloseMenu } = useCardContext();
   const [hoveredItem, setHoveredItem] = useState('');
   const [isClosing, setIsClosing] = useState(false);
 
@@ -15,7 +15,7 @@ const Menu = () => {
     setIsClosing(true);
 
     setTimeout(() => {
-      setIsMenuOpen(false);
+			onCloseMenu();
       setIsClosing(false);
     }, 600);
   };

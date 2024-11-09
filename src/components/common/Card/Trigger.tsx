@@ -4,12 +4,12 @@ import Icon from '../Icon';
 import { useCardContext } from './context';
 
 const Trigger = () => {
-	const { isMenuOpen, setIsMenuOpen } = useCardContext();
+	const { isMenuOpen, onOpenMenu } = useCardContext();
 
 	if (isMenuOpen) return null;
 
 	return (
-    <CardTrigger onClick={() => setIsMenuOpen(true)}>
+    <CardTrigger onClick={onOpenMenu}>
       <Icon iconName="options" style={{ width: 24, height: 24 }} />
     </CardTrigger>
   );
