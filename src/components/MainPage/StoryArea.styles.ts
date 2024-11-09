@@ -21,63 +21,6 @@ export const Container = styled.div`
   `}
 `;
 
-export const StoryTitle = styled.h3`
-  overflow: hidden;
-  width: 1712px;
-  margin: 0 auto;
-  font-size: 52px;
-  line-height: 78px;
-  letter-spacing: -1px;
-  display: flex;
-  align-items: center;
-
-  ${mediaQuery.large`
-    width: 1316px;
-    font-size: 48px;
-    line-height: 72px;
-  `}
-
-  ${mediaQuery.medium`
-    width: 948px;
-    font-size: 32px;
-    line-height: 48px;
-  `}
-
-  ${mediaQuery.small`
-    width: 712px;
-  `}
-
-  ${mediaQuery.xsmall`
-    width: 100%;
-    max-width: 370px;
-    padding: 0 14px;
-    margin: 0;
-    font-size: 26px;
-    line-height: 36px;
-  `}
-`;
-
-export const StoryTitleIcon = styled.img`
-  width: 78px;
-  height: 78px;
-  margin-right: 20px;
-
-  ${mediaQuery.large`
-    width: 72px;
-    height: 72px;
-    margin-right: 8px;
-  `}
-
-  ${mediaQuery.medium`
-    width: 48px;
-    height: 48px;
-    marign-right: 4px;
-  `}
-
-  ${mediaQuery.xsmall`
-    display: hidden;
-  `}
-`;
 
 export const PlayIconWrapper = styled.div`
   overflow: hidden;

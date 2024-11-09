@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Container, PlayIcon, PlayIconWrapper, SlideWrapper, StoryTitle, StoryTitleIcon } from './StoryArea.styles';
+import { Container, PlayIcon, PlayIconWrapper, SlideWrapper } from './StoryArea.styles';
 import { useMediaQuery } from 'react-responsive';
 import { stories } from '../../constants/stories';
 import Card from '../common/Card/Card';
+import SectionTitle from '../common/SectionTitle';
 
 const StoryArea = () => {
   const isMobileScreen = useMediaQuery({ maxWidth: 767 });
@@ -82,22 +83,16 @@ const StoryArea = () => {
 	
 	return (
     <Container>
-      <StoryTitle>
-        {!isMobileScreen && (
-          <StoryTitleIcon
-            src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/ico_archives.gif"
-            alt=""
-          />
-        )}
-        <span style={{ padding: isMobileScreen ? '0 14px' : 0 }}>
-          카카오와 카카오 그룹이 축적해 온 이야기들
-        </span>
+      <SectionTitle
+        text="카카오와 카카오 그룹이 축적해 온 이야기들"
+        iconUrl="https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/ico_archives.gif"
+      >
         {!isMobileScreen && (
           <PlayIconWrapper>
             <PlayIcon isPlaying={stopPlaying} onClick={togglePlay} />
           </PlayIconWrapper>
         )}
-      </StoryTitle>
+      </SectionTitle>
       {isMobileScreen && (
         <PlayIconWrapper>
           <PlayIcon isPlaying={stopPlaying} onClick={togglePlay} />
@@ -121,7 +116,10 @@ const StoryArea = () => {
       >
         {Array.from({ length: 10 }, (_, groupIndex) =>
           stories.map((story, index) => (
-            <Card key={`${story.title}-${groupIndex}-${index}`} largeSize={story.largeSize}>
+            <Card
+              key={`${story.title}-${groupIndex}-${index}`}
+              largeSize={story.largeSize}
+            >
               {!isMedium && story.largeSize === 'imageTop' && (
                 <Card.Image imageUrl={story.imageUrl} largeSize={'imageTop'} />
               )}
