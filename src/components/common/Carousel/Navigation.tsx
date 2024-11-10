@@ -3,48 +3,58 @@ import mediaQuery from '../../../utils/mediaQuery';
 import { useMediaQuery } from 'react-responsive';
 import { useCarousel } from './context';
 
-const Navigation = ({ isFirst = false }: { isFirst?: boolean;}) => {
-	const isMobileScreen = useMediaQuery({ maxWidth: 767 })
-	const { currentSlide, onSetCurrentSlide, items } = useCarousel();
-	
-	return (
-		<>
-			{!isMobileScreen && (
-				<NavigationList>
-					{Array.from({ length: items }).map((_, i) => (
-						<li key={i} style={{ listStyle: 'none' }}>
-							<Dot isFirst={isFirst} active={currentSlide === i} onClick={() => onSetCurrentSlide(i)} />
-						</li>
-					))}
-				</NavigationList>
-			)}
-		</>
-	);
+interface IProps {
+  isFirst?: boolean;
+  isFromNews?: boolean;
+}
+
+const Navigation = ({ isFirst = false, isFromNews }: IProps) => {
+  const isMobileScreen = useMediaQuery({ maxWidth: 767 });
+  const { currentSlide, onSetCurrentSlide, items } = useCarousel();
+
+  return (
+    <>
+      {(isFromNews || (!isFromNews && !isMobileScreen)) && (
+        <NavigationList isFromNews={isFromNews!}>
+          {Array.from({ length: items }).map((_, i) => (
+            <li key={i} style={{ listStyle: 'none' }}>
+              <Dot
+                isFirst={isFirst}
+                active={currentSlide === i}
+                onClick={() => onSetCurrentSlide(i)}
+              />
+            </li>
+          ))}
+        </NavigationList>
+      )}
+    </>
+  );
 };
 
 export default Navigation;
 
-const NavigationList = styled.ul`
-	position: absolute;
-	bottom: 6px;
-	left: 50%;
-	transform: translate(-50%);
-	white-space: nowrap;
-	display: flex;
-	padding: 0;
+const NavigationList = styled.ul<{ isFromNews: boolean }>`
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translate(-50%);
+  white-space: nowrap;
+  display: flex;
+  padding: 0;
+  z-index: 52;
 
-	${mediaQuery.large`
+  ${mediaQuery.large`
 		bottom: -6px;
 	`}
 
-	${mediaQuery.medium`
+  ${mediaQuery.medium`
 		bottom: -12px;
 	`}
 
 	${mediaQuery.small`
-		bottom: 12px;
+		bottom: ${({ isFromNews }: IProps) => (isFromNews ? '-4px' : '12px')};
 	`}
-`
+`;
 
 const Dot = styled.div<{ isFirst?: boolean; active?: boolean }>`
 	opacity: ${({active, isFirst}) => (active || isFirst) ? 1 : 0.45};

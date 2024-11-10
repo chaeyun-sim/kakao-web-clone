@@ -7,45 +7,46 @@ import "slick-carousel/slick/slick-theme.css";
 import './slick.css'
 import Navigation from './Navigation';
 import { CarouselContext } from './context';
+import Arrow from './Arrow';
 
 interface IProps {
-	hasNavigation?: boolean;
+	noLoop?: boolean;
 }
 
-const Carousel = ({ children }: PropsWithChildren<IProps>) => {
-	const sliderRef = useRef<Slider>(null);
-	const [currentSlide, setCurrentSlide] = useState(0);
-	const items = Children.toArray(children).length;
+const Carousel = ({ children, noLoop }: PropsWithChildren<IProps>) => {
+  const sliderRef = useRef<Slider>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const items = Children.toArray(children).length;
 
-	const onSetCurrentSlide = (value: number) => {
-		(sliderRef.current as any)?.slickGoTo(value);
-	}
-	
-	const onSlideNext = () => {
-		(sliderRef.current as any)?.slickNext();
-	}
+  const onSetCurrentSlide = (value: number) => {
+    (sliderRef.current as any)?.slickGoTo(value);
+  };
 
-	const onSlidePrev = () => {
-		(sliderRef.current as any)?.slickPrev();
-	}
+  const onSlideNext = () => {
+    (sliderRef.current as any)?.slickNext();
+  };
+
+  const onSlidePrev = () => {
+    (sliderRef.current as any)?.slickPrev();
+  };
 
   const settings = {
     dots: false,
     arrows: false,
-		infinite: true,
-		fade: true,
-		draggable: true,
+    infinite: !noLoop,
+    fade: true,
+    draggable: true,
     speed: 500,
     slidesToShow: 1,
-		slidesToScroll: 1,
-		initialSlide: 0,
-		vertical: false,
-		beforeChange: (_: number, next: number) => {
+    slidesToScroll: 1,
+    initialSlide: 0,
+    vertical: false,
+    beforeChange: (_: number, next: number) => {
       setCurrentSlide(next);
     },
   };
 
-	return (
+  return (
     <CarouselContext.Provider
       value={{
         items,
@@ -64,5 +65,6 @@ const Carousel = ({ children }: PropsWithChildren<IProps>) => {
 
 Carousel.Item = Item;
 Carousel.Navigation = Navigation;
+Carousel.Arrow = Arrow;
 
 export default Carousel;
