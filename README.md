@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# 카카오 홈페이지 클론코딩
+<img width="1120" alt="스크린샷 2024-11-11 오전 1 41 10" src="https://github.com/user-attachments/assets/e802720a-b2b4-4a79-a733-f256c1819733">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### 👩🏻‍💻 개발 기간
+2024.10.30 ~ 2024.11.11
+> 목적: 반응형 컴포넌트, 컴포넌트 다양화, 스토리북 활용 등 연습
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+### 🔗 배포 링크
+[kakao-web-clone.vercel.app/](kakao-web-clone.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 🛠️ 기술 스택
+- 언어: `Typescript`
+- 라이브러리: `React`
+- 스타일링: `Styled-Components`
+- 디자인 시스템: `StoryBook`
+- 배포: `Vercel`
 
-### `npm test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📂 폴더 구조
+```
+📂 src
+  ├─ 📂 components
+  │  └─ 📂 CarouselItems - 여러 디자인의 캐러셀 아이템들
+     └─ 📂 common        - 공통 컴포넌트
+     └─ 📂 MainPage      - 메인 페이지 주요 섹션들
+  ├─ 📂 constants
+  ├─ 📂 fonts
+  ├─ 📂 pages
+  │  ├─ index.styles.ts
+  │  └─ index.tsx
+  ├─ 📂 providers
+  ├─ 📂 stories
+  ├─ 📂 utils
+  ├─ App.tsx
+  ├─ index.css
+  └─ index.tsx
+```
 
-### `npm run build`
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✅ 구현 목록
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 헤더
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 메인 섹션
 
-### `npm run eject`
+- 스토리 섹션
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 서비스 섹션
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 뉴스 섹션
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 약속 섹션
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 헬프 섹션
 
-## Learn More
+- 푸터
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
