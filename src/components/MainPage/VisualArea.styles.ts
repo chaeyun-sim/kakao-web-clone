@@ -106,13 +106,13 @@ export const InnerTop = styled.div`
       position: static;
       width: 48px;
       height: 48px;
-    `}
+    `};
   }
 
   &::before {
     content: '';
     position: absolute;
-    width: 38ex;
+    width: 38px;
     height: 38px;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Cpath d='M36 38h2V0H0v2c19.9 0 36 16.1 36 36z' fill='%23fff'/%3E%3C/svg%3E");
@@ -197,7 +197,7 @@ export const InnerBottom = styled.div`
     height: 48px;
     display: flex;
     justify-content: center;
-    margin-top: 75px;
+    margin-top: 20px;
   `}
 
   &::before {
@@ -248,3 +248,21 @@ export const InnerBottom = styled.div`
     `}
   }
 `;
+
+export const TitleBox = styled.div`
+  width: calc(100% + 4px);
+  padding: 20px 14px 0;
+  position: relative;
+  top: 0;
+  left: -2px;
+  color: black;
+  box-sizing: border-box;
+
+  & > strong {
+    display: block;
+    font-size: 26.5px;
+    line-height: 1.38;
+    letter-spacing: -0.8px;
+    font-weight: 400;
+  }
+`
