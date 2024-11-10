@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { services } from '../../constants/service';
 import SectionTitle from '../common/SectionTitle';
-import { InnerService, SeeMoreBox, SeeMoreButton, ServiceBox, ServiceIcon, ServiceList, ServiceTitle, ServiceWrapper } from './ServiceArea.styles';
-import Icon from '../common/Icon';
+import { InnerService, ServiceBox, ServiceIcon, ServiceList, ServiceTitle, ServiceWrapper } from './ServiceArea.styles';
 import { useMediaQuery } from 'react-responsive';
 import { SectionContainer } from './common.styles';
+import SeeMore from '../SeeMore';
 
 const ServiceArea = () => {
 	const isSmallScreen = useMediaQuery({ maxWidth: 1023})
-	const isMobileScreen = useMediaQuery({ maxWidth: 767})
 	const [hoveredItemTitle, setHoveredItemTitle] = useState('');
 
 	return (
@@ -46,18 +45,7 @@ const ServiceArea = () => {
             );
 					})}
         </ServiceList>
-        <SeeMoreBox>
-          <SeeMoreButton>
-            서비스 전체보기
-            <Icon
-              iconName="go-button"
-              size={24}
-              style={{
-                marginLeft: isMobileScreen ? '8px' : '12px',
-              }}
-            />
-          </SeeMoreButton>
-        </SeeMoreBox>
+				<SeeMore text="서비스 전체보기" />
       </InnerService>
     </SectionContainer>
   );
