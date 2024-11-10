@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Icon from '../common/Icon';
-import { Container, InnerArea, InnerBottom, InnerTop, VisualWrapper } from './VisualArea.styles';
+import { Container, InnerArea, InnerBottom, InnerTop, TitleBox, VisualWrapper } from './VisualArea.styles';
+import { useMediaQuery } from 'react-responsive';
 
 const VisualArea = () => {
+  const isMobileScreen = useMediaQuery({ maxWidth: 767 })
   const [isIconHovered, setIsIconHovered] = useState(false);
 
   return (
@@ -27,6 +29,11 @@ const VisualArea = () => {
           />
         </a>
       </InnerTop>
+      {isMobileScreen && (
+        <TitleBox>
+          <strong>더 가깝게, 카카오</strong>
+        </TitleBox>
+      )}
       <InnerBottom>
         더 알아보기{' '}
         <div
