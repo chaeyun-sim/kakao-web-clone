@@ -33,6 +33,6 @@ const CardWrapper = styled.div<{ isFromNews: boolean }>`
 	`}
 
 	${mediaQuery.small`
-		width: 88%;
+		width: ${({ isFromNews }: {isFromNews: boolean}) => (isFromNews ? '88.5%' : '88%;')}
 	`}
 `;

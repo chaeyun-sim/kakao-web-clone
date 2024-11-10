@@ -77,7 +77,7 @@ const Container = styled.div<Pick<IProps, 'isFromNews'>>`
 	`}
 
 	${mediaQuery.small`
-    width: ${({ isFromNews }: Pick<IProps, 'isFromNews'>) => (isFromNews ? '352px' : '232px')};
+    width: ${({ isFromNews }: Pick<IProps, 'isFromNews'>) => (isFromNews ? '348px' : '232px')};
     height: ${({ isFromNews }: Pick<IProps, 'isFromNews'>) => (isFromNews ? '399px' : '328px')};
 		padding: 0 4px;
 	`}

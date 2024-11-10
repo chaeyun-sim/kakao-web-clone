@@ -81,7 +81,7 @@ const CardMenu = styled.div<{ isClosing: boolean }>`
   animation: ${props => (props.isClosing ? fadeOut : fadeIn)} 0.6s ease-in-out;
 `;
 
-const CloseButton = styled.button`
+export const CloseButton = styled.button`
   display: block;
   overflow: hidden;
   position: absolute;
