@@ -19,7 +19,7 @@ const HelpBox = ({ title, iconUrl, variant = 'medium' }: IProps) => {
         {isSmallScreen ? '' : '바로가기'}
         <Icon iconName="go-top-right-button" size={24} />
       </GoButton>
-      <HelpIcon src={iconUrl} alt="" />
+      {!isSmallScreen && <HelpIcon src={iconUrl} alt="" />}
     </HelpBoxContainer>
   );
 };
