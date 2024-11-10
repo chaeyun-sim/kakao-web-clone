@@ -4,7 +4,7 @@ import SectionTitle from '../common/SectionTitle';
 import { InnerService, SeeMoreBox, SeeMoreButton, ServiceBox, ServiceIcon, ServiceList, ServiceTitle, ServiceWrapper } from './ServiceArea.styles';
 import Icon from '../common/Icon';
 import { useMediaQuery } from 'react-responsive';
-import { SectionContainer } from './comon.styles';
+import { SectionContainer } from './common.styles';
 
 const ServiceArea = () => {
 	const isSmallScreen = useMediaQuery({ maxWidth: 1023})

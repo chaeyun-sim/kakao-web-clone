@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { stories } from '../../constants/stories';
 import Card from '../common/Card/Card';
 import SectionTitle from '../common/SectionTitle';
-import { SectionContainer } from './comon.styles';
+import { SectionContainer } from './common.styles';
 
 const StoryArea = () => {
   const isMobileScreen = useMediaQuery({ maxWidth: 767 });

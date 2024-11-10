@@ -2,7 +2,7 @@ import { useMediaQuery } from 'react-responsive';
 import { cardNews, textNews } from '../../constants/news';
 import Card from '../common/Card/Card';
 import SectionTitle from '../common/SectionTitle';
-import { SectionContainer } from './comon.styles';
+import { SectionContainer } from './common.styles';
 import { BottomWrapper, InnerNews, MoreBox, MoveWrapper, TextBox, TopWrapper } from './NewsArea.styles';
 import Icon from '../common/Icon';
 import { useState } from 'react';
