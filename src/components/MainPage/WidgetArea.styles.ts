@@ -54,10 +54,11 @@ export const FirstWidget = styled.div`
   ${mediaQuery.xsmall`
     position: relative;
     box-sizing: border-box;
+    height: 220px;
     width: 100%;
-    height: 262px;
     padding-top: 42px;
     font-size: 1px;
+    margin-bottom: 42px;
   `}
 `;
 
@@ -409,7 +410,7 @@ export const NumberWrapper = styled.strong`
   ${mediaQuery.xsmall`
     line-height: 1.44;
   `}
-`
+`;
 
 export const SingleNumber = styled.span`
   font-size: 36px;
@@ -458,4 +459,45 @@ export const CountText = styled.span`
     font-size: 15px;
     line-height: 1.6;
   `}
-`
+`;
+
+export const SliderItemWrapper = styled.div`
+  width: 340px;
+  height: 220px;
+  background-color: blue;
+  border-radius: 24px;
+  overflow: hidden;
+`;
+
+export const PrevArrow = styled.button`
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath d='M19 20.59L14.42 16 19 11.41 17.59 10l-6 6 6 6L19 20.59z' fill='%23000'/%3E%3C/svg%3E");
+  position: absolute;
+  top: -1.5px;
+  width: 32px;
+  height: 32px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  left: 0px;
+`;
+
+export const NextArrow = styled.button`
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath d='M13 20.59L17.58 16 13 11.41 14.41 10l6 6-6 6L13 20.59z' fill='%23000'/%3E%3C/svg%3E");
+  position: absolute;
+  top: -2px;
+  width: 32px;
+  height: 32px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  left: 36px;
+`;
+
+export const Slides = styled.span`
+  position: absolute;
+  top: -1px;
+  left: 74px;
+  line-height: 32px;
+  font-size: 12px;
+  color: ${({ theme }) => theme.color.gray[300]};
+`;
