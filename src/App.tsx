@@ -1,6 +1,7 @@
 import { AppContainer, MainContainer } from './App.styles';
 import Layout from './components/layout/index';
 import NewsArea from './components/MainPage/NewsArea';
+import ResponsibleArea from './components/MainPage/ResponsibleArea';
 import ServiceArea from './components/MainPage/ServiceArea';
 import StoryArea from './components/MainPage/StoryArea';
 import VisualArea from './components/MainPage/VisualArea';
@@ -17,6 +18,7 @@ function App() {
         <StoryArea />
         <ServiceArea />
         <NewsArea />
+        <ResponsibleArea />
       </AppContainer>
     </Layout>
   );
