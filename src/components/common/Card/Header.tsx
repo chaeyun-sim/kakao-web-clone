@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <CardHeader>
-      <BadgeIcon src={data.badgeImageUrl} alt="" />
+      <BadgeIcon src={data.badgeImageUrl} alt="card badge icon" />
       <Badge isFromNews={isFromNews!}>{data.badgeText}</Badge>
       <Date>{data.date}</Date>
     </CardHeader>

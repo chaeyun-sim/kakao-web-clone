@@ -15,11 +15,11 @@ const HelpBox = ({ title, iconUrl, variant = 'medium' }: IProps) => {
 	return (
     <HelpBoxContainer variant={variant!}>
       <HelpBoxTitle variant={variant!}>{title}</HelpBoxTitle>
-      <GoButton>
+      <GoButton aria-label='고객센터 이동'>
         {isSmallScreen ? '' : '바로가기'}
         <Icon iconName="go-top-right-button" size={24} />
       </GoButton>
-      {!isSmallScreen && <HelpIcon src={iconUrl} alt="" />}
+      {!isSmallScreen && <HelpIcon src={iconUrl} alt="help icon" />}
     </HelpBoxContainer>
   );
 };

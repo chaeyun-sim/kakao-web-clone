@@ -50,16 +50,13 @@ export const InnerTop = styled.div`
 export const SocialWrapper = styled.div`
   margin-left: 16px;
   color: black;
-  background-image: url('https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/main/img_ryan.png');
-  background-size: 264px;
-  background-position: bottom;
   background-color: #fae100;
-  background-repeat: no-repeat;
   box-sizing: border-box;
   padding: 40px;
   border-radius: 36px;
   height: 515px;
   width: 560px;
+  position: relative; // 추가: 이미지 포지셔닝을 위해
 
   ${mediaQuery.large`
 		height: 494px;
@@ -68,7 +65,6 @@ export const SocialWrapper = styled.div`
 
   ${mediaQuery.medium`
 		margin-left: 12px;
-		background-size: 190px auto;
 		padding: 24px;
 		border-radius: 24px;
 		height: 354px;
@@ -77,7 +73,6 @@ export const SocialWrapper = styled.div`
 
 	${mediaQuery.small`
 		margin-left: 0;
-		background-image: none;
 		display: inline-block;
 		width: calc(50% - 4px);
 		height: 184px;
@@ -90,6 +85,23 @@ export const SocialWrapper = styled.div`
 		width: 100%;
 		height: auto;
 	`}
+`;
+
+export const RyanImage = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 264px;
+  height: auto;
+
+  ${mediaQuery.medium`
+    width: 190px;
+  `}
+
+  ${mediaQuery.small`
+    display: none;
+  `}
 `;
 
 export const Title = styled.strong`
@@ -184,16 +196,14 @@ export const SocialList = styled.div`
 export const RecruitWrapper = styled.div`
   margin-left: 16px;
   color: white;
-  background-image: url('https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/main/img_recruit.png');
-  background-size: 100% auto;
-  background-position: 0 100%;
   background-color: #0073ff;
-  background-repeat: no-repeat;
   box-sizing: border-box;
   padding: 40px;
   border-radius: 36px;
   width: 560px;
   height: 515px;
+  position: relative;
+	overflow: hidden;
 
   ${mediaQuery.large`
 		height: 494px;
@@ -213,8 +223,6 @@ export const RecruitWrapper = styled.div`
 		width: calc(50% - 4px);
 		height: 184px;
 		border-radius: 16px;
-		background-position: right 16px bottom 16px;
-		background-size: 154px 68px;
 	`}
 
 	${mediaQuery.xsmall`
@@ -226,6 +234,29 @@ export const RecruitWrapper = styled.div`
 		margin-top: 12px;
 	`}
 `;
+
+export const RecruitImage = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 36px;
+
+  ${mediaQuery.medium`
+		border-radius: 24px;
+	`}
+
+  ${mediaQuery.small`
+    width: 154px;
+    height: 68px;
+    right: 16px;
+    left: auto;
+    bottom: 16px;
+		border-radius: 16px;
+  `}
+`;
+
 
 export const HelpWrapper = styled.div`
   display: flex;

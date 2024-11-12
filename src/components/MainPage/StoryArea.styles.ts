@@ -51,11 +51,12 @@ export const PlayIcon = styled.button<{ isPlaying: boolean }>`
   height: 56px;
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 56px 56px;
 
   ${mediaQuery.medium`
     width: 32px;
     height: 32px;
+    background-size: 32px 32px;
   `}
 
   ${mediaQuery.xsmall`

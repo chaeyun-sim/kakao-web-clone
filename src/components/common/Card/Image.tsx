@@ -11,7 +11,14 @@ const Image = ({ largeSize }: IProps) => {
 
   return (
     <ImageWrapper largeSize={largeSize} isFromNews={isFromNews!}>
-      <ImageBox src={data.imageUrl} alt="" largeSize={largeSize} />
+      <ImageBox
+        src={data.imageUrl}
+        alt="card image"
+        largeSize={largeSize}
+        width={560}
+        height={isFromNews ? 314 : 234}
+        loading="lazy"
+      />
     </ImageWrapper>
   );
 };

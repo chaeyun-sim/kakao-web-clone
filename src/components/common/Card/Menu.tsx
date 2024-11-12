@@ -22,7 +22,7 @@ const Menu = () => {
 
   return (
     <CardMenu isClosing={isClosing}>
-      <CloseButton onClick={handleClose}>
+      <CloseButton onClick={handleClose} aria-label='메뉴 닫기'>
         <Icon iconName="close" style={{ width: 24, height: 24 }} />
       </CloseButton>
       <List>
@@ -33,7 +33,7 @@ const Menu = () => {
             onMouseOver={() => setHoveredItem(item)}
             onMouseOut={() => setHoveredItem('')}
           >
-            <button style={{ width: 'inherit', height: 'inherit' }}>
+            <button style={{ width: 'inherit', height: 'inherit' }} aria-label='공유 아이콘 선택'>
               <Icon
                 iconName={
                   hoveredItem === item ? `share/${item}-hover` : `share/${item}`

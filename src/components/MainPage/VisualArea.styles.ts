@@ -115,6 +115,7 @@ export const InnerTop = styled.div`
     width: 38px;
     height: 38px;
     background-repeat: no-repeat;
+    background-size: 38px 38px;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Cpath d='M36 38h2V0H0v2c19.9 0 36 16.1 36 36z' fill='%23fff'/%3E%3C/svg%3E");
     top: 10px;
     left: -35.8px;
@@ -126,6 +127,7 @@ export const InnerTop = styled.div`
     ${mediaQuery.medium`
       width: 22px;
       height: 22px;
+      background-size: 22px 22px;
       top: 0.6px;
       left: -21px;
     `}
@@ -133,6 +135,7 @@ export const InnerTop = styled.div`
     ${mediaQuery.xsmall`
       width: 18px;
       height: 18px;
+      background-size: 18px 18px;
       top: 1px;
       left: -17px;
     `}
@@ -144,6 +147,7 @@ export const InnerTop = styled.div`
     width: 38px;
     height: 38px;
     background-repeat: no-repeat;
+    background-size: 38px 38px;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Cpath d='M36 38h2V0H0v2c19.9 0 36 16.1 36 36z' fill='%23fff'/%3E%3C/svg%3E");
     right: 0;
     bottom: -36px;
@@ -151,6 +155,7 @@ export const InnerTop = styled.div`
     ${mediaQuery.medium`
       width: 22px;
       height: 22px;
+      background-size: 22px 22px;
       bottom: -21px;
       right: 0.8px;
     `}
@@ -158,6 +163,7 @@ export const InnerTop = styled.div`
     ${mediaQuery.xsmall`
       width: 18px;
       height: 18px;
+      background-size: 18px 18px;
       bottom: -16.5px;
     `}
   }
@@ -203,9 +209,10 @@ export const InnerBottom = styled.div`
   &::before {
     content: '';
     position: absolute;
-    width: 38ex;
+    width: 38px;
     height: 38px;
     background-repeat: no-repeat;
+    background-size: 38px 38px;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Cpath d='M2 0H0v38h38v-2C18.1 36 2 19.9 2 0z' fill='%23fff'/%3E%3C/svg%3E");
     top: -36px;
     left: 0;
@@ -218,6 +225,7 @@ export const InnerBottom = styled.div`
     ${mediaQuery.medium`
       width: 22px;
       height: 22px;
+      background-size: 22px 22px;
       top: -21px;
       left: 0.5px;
     `}
@@ -229,6 +237,7 @@ export const InnerBottom = styled.div`
     width: 38px;
     height: 38px;
     background-repeat: no-repeat;
+    background-size: 38px 38px;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38'%3E%3Cpath d='M2 0H0v38h38v-2C18.1 36 2 19.9 2 0z' fill='%23fff'/%3E%3C/svg%3E");
     right: -36px;
     bottom: 0;
@@ -236,6 +245,7 @@ export const InnerBottom = styled.div`
     ${mediaQuery.medium`
       width: 22px;
       height: 22px;
+      background-size: 22px 22px;
       right: -20.5px;
       bottom: 0.5px;
     `}
@@ -243,6 +253,7 @@ export const InnerBottom = styled.div`
     ${mediaQuery.small`
       width: 18px;
       height: 18px;
+      background-size: 18px 18px;
       right: -17px;
       bottom: 0.5px;
     `}
@@ -265,4 +276,17 @@ export const TitleBox = styled.div`
     letter-spacing: -0.8px;
     font-weight: 400;
   }
-`
+`;
+
+export const PreloadImage = styled.div`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  background-image: url('https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/heroVisual/4c222124019200001.png?type=thumb&opt=C1424x808.fwebp');
+`;

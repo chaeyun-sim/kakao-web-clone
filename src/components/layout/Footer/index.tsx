@@ -1,18 +1,44 @@
-import { footerList, footerListKakao, footerListKeys, serviceInfoList } from '../../../constants/footer';
+/**
+ * @note 이 컴포넌트는 카카오 웹사이트의 원본 디자인을 따르고 있습니다.
+ */
+
+import {
+  footerList,
+  footerListKakao,
+  footerListKeys,
+  serviceInfoList,
+} from '../../../constants/footer';
 import LinkIcon from '../../icons/link';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Accordion from '../../common/Accordion/Accordion';
-import { CopyRight, FooterContainer, GroupInfo, InnerFooter, LinkInfo, ListItem, MainServiceBox, PlusIcon, RelatedSiteBox, RelationSection, ServiceBox, ServiceList, ServiceSection, SubTitle, WrapInfo } from './index.styles';
+import {
+  CopyRight,
+  FooterContainer,
+  GroupInfo,
+  InnerFooter,
+  LinkInfo,
+  ListItem,
+  MainServiceBox,
+  PlusIcon,
+  RelatedSiteBox,
+  RelationSection,
+  ServiceBox,
+  ServiceList,
+  ServiceSection,
+  SubTitle,
+  WrapInfo,
+} from './index.styles';
 import Icon from '../../common/Icon';
+import { MAIN_LINK } from '../../../constants/link';
 
 const Footer = () => {
-	const isSmallScreen = useMediaQuery({ maxWidth: 1023 });
-	const [hoveredItem, setHoveredItem] = useState('');
+  const isSmallScreen = useMediaQuery({ maxWidth: 1023 });
+  const [hoveredItem, setHoveredItem] = useState('');
 
-	const isHovered = (item: string) => hoveredItem === item;
-	
-	return (
+  const isHovered = (item: string) => hoveredItem === item;
+
+  return (
     <FooterContainer>
       <InnerFooter>
         <ServiceSection>
@@ -27,7 +53,7 @@ const Footer = () => {
                     onMouseOut={() => setHoveredItem('')}
                   >
                     <ServiceList
-                      href="/"
+                      href={MAIN_LINK}
                       isHovered={isHovered(item.title)}
                       isFirstItem
                     >
@@ -45,9 +71,9 @@ const Footer = () => {
           </MainServiceBox>
           {isSmallScreen ? (
             <div style={{ width: '100%', marginTop: '40px' }}>
-							{footerList.map((list, idx) => {
-								const data = idx === 1 ? [...list, ...footerList[2]] : list;
-								return (
+              {footerList.map((list, idx) => {
+                const data = idx === 1 ? [...list, ...footerList[2]] : list;
+                return (
                   idx !== 2 && (
                     <Accordion key={footerListKeys[idx]}>
                       <Accordion.Trigger isFirstItem={idx === 0}>
@@ -57,7 +83,7 @@ const Footer = () => {
                         {data.map((item, itemIndex) => (
                           <ServiceList
                             key={item.title}
-                            href="/"
+                            href={MAIN_LINK}
                             isHovered={isHovered(item.title)}
                             style={{ marginTop: itemIndex === 0 ? 0 : '8px' }}
                             onMouseOver={() => setHoveredItem(item.title)}
@@ -91,7 +117,10 @@ const Footer = () => {
                         onMouseOver={() => setHoveredItem(item.title)}
                         onMouseOut={() => setHoveredItem('')}
                       >
-                        <ServiceList href="/" isHovered={isHovered(item.title)}>
+                        <ServiceList
+                          href={MAIN_LINK}
+                          isHovered={isHovered(item.title)}
+                        >
                           {item.title}{' '}
                           {item.hasNoLink ? null : (
                             <LinkIcon
@@ -117,7 +146,7 @@ const Footer = () => {
                   onMouseOut={() => setHoveredItem('')}
                 >
                   <LinkInfo
-                    href="/"
+                    href={MAIN_LINK}
                     isHovered={isHovered(`service-${item.value}`)}
                     isBold={item.bold!}
                   >
@@ -140,7 +169,7 @@ const Footer = () => {
               ))}
             </GroupInfo>
             <RelatedSiteBox>
-              <a href="/">
+              <a href={MAIN_LINK} aria-label="관련 사이트로 이동">
                 관련사이트{' '}
                 <PlusIcon
                   src="/icons/plus.svg"

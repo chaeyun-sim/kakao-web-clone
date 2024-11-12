@@ -12,7 +12,7 @@ const SeeMore = ({text}: IProps) => {
 
   return (
     <SeeMoreBox>
-      <SeeMoreButton>
+      <SeeMoreButton aria-label='더 보기'>
         {text}
         <Icon
           iconName="go-button"

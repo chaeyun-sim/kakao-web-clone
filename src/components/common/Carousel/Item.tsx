@@ -12,10 +12,22 @@ const Item = ({
   const { onSlidePrev, onSlideNext } = useCarousel();
 
   return (
-    <ItemWrapper isLastItem={isLastItem}>
+    <ItemWrapper isLastItem={isLastItem} aria-hidden="false">
       {children}
-      {hasArrow && <PrevArrow onClick={onSlidePrev} />}
-      {hasArrow && <NextArrow onClick={onSlideNext} />}
+      {hasArrow && (
+        <PrevArrow
+          onClick={onSlidePrev}
+          aria-label="이전 슬라이드 보기"
+          aria-hidden={!hasArrow}
+        />
+      )}
+      {hasArrow && (
+        <NextArrow
+          onClick={onSlideNext}
+          aria-label="다음 슬라이드 보기"
+          aria-hidden="false"
+        />
+      )}
     </ItemWrapper>
   );
 };

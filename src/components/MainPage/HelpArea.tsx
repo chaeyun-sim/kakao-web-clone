@@ -9,6 +9,8 @@ import {
   Title,
   SocialWrapper,
   HelpWrapper,
+  RyanImage,
+  RecruitImage,
 } from './Help.styles';
 import { helpData, serviceBtnList } from '../../constants/help';
 import HelpBox from '../HelpBox';
@@ -40,13 +42,21 @@ const HelpArea = () => {
               />
             ))}
           </SocialList>
+          <RyanImage
+            src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/main/img_ryan.png"
+            alt="Ryan"
+          />
         </SocialWrapper>
         <RecruitWrapper>
           <Title>{'세상만사에 관심이 많다면,\n당신은 이미 카카오 크루'}</Title>
-          <SubTitle style={{ cursor: 'pointer' }}>
+          <SubTitle style={{ cursor: 'pointer' }} aria-label="채용 보기">
             영입소식
             <Icon iconName="go-top-right-button-white" />
           </SubTitle>
+          <RecruitImage
+            src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/main/img_recruit.png"
+            alt="Recruit"
+          />
         </RecruitWrapper>
       </InnerHelp>
       <HelpWrapper>
@@ -54,7 +64,7 @@ const HelpArea = () => {
           <HelpBox key={item.title} {...item} variant="large" />
         ))}
       </HelpWrapper>
-      <div style={{ marginTop: '24px'}}>
+      <div style={{ marginTop: '24px' }}>
         <SeeMore text="카카오 소식 모아보기" />
       </div>
     </SectionContainer>

@@ -13,7 +13,14 @@ const SectionTitle = ({ children, text, iconUrl }: PropsWithChildren<IProps>) =>
 
   return (
     <Title>
-      {!isMobileScreen && <StoryTitleIcon src={iconUrl} alt="" />}
+      {!isMobileScreen && (
+        <StoryTitleIcon
+          src={iconUrl}
+          alt="section title icon"
+          width={78}
+          height={78}
+        />
+      )}
       {text}
       {children}
     </Title>

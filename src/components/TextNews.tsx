@@ -32,7 +32,10 @@ const TextNews = ({ title, date, index, isOpen, onOpen, onClose }: IProps) => {
                   margin: '0 6px',
                 }}
               >
-                <button style={{ width: 'inherit', height: 'inherit' }}>
+                <button
+                  style={{ width: 'inherit', height: 'inherit' }}
+                  aria-label="공유 아이콘"
+                >
                   <Icon
                     iconName={
                       hoveredItem === item
@@ -50,20 +53,25 @@ const TextNews = ({ title, date, index, isOpen, onOpen, onClose }: IProps) => {
       <SectionHeader>
         <MegaphoneIcon
           src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/6562f7bc017800001.png?type=thumb&opt=C72x72.fwebp"
-          alt=""
+          alt="news megaphone icon"
         />
         <Badge>보도자료</Badge>
         <DateText>{date}</DateText>
       </SectionHeader>
       <Title>{title}</Title>
       {isOpen ? (
-        <CloseButton onClick={onClose} style={{ zIndex: 50 }}>
+        <CloseButton
+          onClick={onClose}
+          style={{ zIndex: 50 }}
+          aria-label="공유 옵션 닫기"
+        >
           <Icon iconName="close" size={24} />
         </CloseButton>
       ) : (
         <OptionButton
           onClick={() => onOpen(index)}
           style={{ top: '28px', right: '20px' }}
+          aria-label='공유 옵션 열기'
         >
           <Icon iconName="options" size={24} />
         </OptionButton>

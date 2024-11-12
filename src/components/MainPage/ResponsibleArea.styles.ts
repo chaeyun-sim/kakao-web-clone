@@ -173,7 +173,7 @@ export const Category = styled.span`
     position: absolute;
     width: 26px;
     height: 26px;
-    background-size: 100% auto;
+    background-size: 26px 26px;
     background-position: 50%;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M0 2c13.3 0 24 10.7 24 24h2V0H0v2z' fill='%23fff' clip-rule='evenodd'/%3E%3C/svg%3E");
@@ -207,6 +207,7 @@ export const Category = styled.span`
     &::after {
       width: 18px;
       height: 18px;
+			background-size: 18px 18px;
     }
 
 		&::before {
@@ -264,7 +265,7 @@ export const ClickButton = styled.a`
     position: absolute;
     width: 26px;
     height: 26px;
-    background-size: 100% auto;
+    background-size: 26px 26px;
     background-position: 50%;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M24 0c0 13.3-10.7 24-24 24v2h26V0h-2z' fill='%23fff' fill-rule='evenodd' clip-rule='evenodd'/%3E%3C/svg%3E");
@@ -302,6 +303,7 @@ export const ClickButton = styled.a`
     &::after {
       width: 18px;
       height: 18px;
+			background-size: 18px 18px;
     }
 
 		&::before {

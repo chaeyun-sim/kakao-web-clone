@@ -1,6 +1,6 @@
 import Carousel from '../common/Carousel/Carousel';
 import { secondWidgetData } from '../../constants/widget';
-import { Badge, Blur, Container, CountText, FirstItem2Text, FirstWidget, GroupText, InnerWrapper, KakaoGroupIcon, MapImage, NumberWrapper, SecondWidget, SingleNumber, Tag, TagWrapper, ThirdWidget, Title, Wrapper, WrapperWithText } from './WidgetArea.styles';
+import { Badge, Blur, CarouselImage, Container, CountText, FirstItem2Text, FirstWidget, GroupText, InnerWrapper, KakaoGroupIcon, MapImage, NumberWrapper, SecondWidget, SingleNumber, Tag, TagWrapper, ThirdWidget, Title, Wrapper, WrapperWithText, YellowContainer } from './WidgetArea.styles';
 import RollingNumber from '../RollingNumber';
 import { useMediaQuery } from 'react-responsive';
 import MobileScreenFirstWidget from '../MobileScreenFirstWidget';
@@ -17,30 +17,17 @@ const WidgetArea = () => {
         ) : (
           <Carousel>
             <Carousel.Item>
-              <img
+              <CarouselImage
                 src="https://t1.kakaocdn.net/thumb/C544x544.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fwidget%2Fe6c6c04d019200001.png"
                 alt="kakao calendar logo"
-                style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
-                }}
-              ></img>
+                width={544}
+                height={544}
+                loading="lazy"
+              />
               <Carousel.Navigation isFirst />
             </Carousel.Item>
             <Carousel.Item>
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  backgroundColor: '#fae100',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                }}
-              >
+              <YellowContainer>
                 <FirstItem2Text>기부에 함께 해주신 착한 마음들</FirstItem2Text>
                 <div>
                   <NumberWrapper>
@@ -61,18 +48,16 @@ const WidgetArea = () => {
                   <CountText>건</CountText>
                 </div>
                 <Carousel.Navigation isFirst />
-              </div>
+              </YellowContainer>
             </Carousel.Item>
             <Carousel.Item>
-              <img
+              <CarouselImage
                 src="https://t1.kakaocdn.net/thumb/C544x544.fwebp.q100/?fname=https%3A%2F%2Ft1.kakaocdn.net%2Fkakaocorp%2Fkakaocorp%2Fadmin%2Fwidget%2F777385a5018d00001.png"
                 alt="kakao impact logo"
-                style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
-                }}
-              ></img>
+                width={544}
+                height={544}
+                loading="lazy"
+              />
               <Carousel.Navigation isFirst />
             </Carousel.Item>
           </Carousel>

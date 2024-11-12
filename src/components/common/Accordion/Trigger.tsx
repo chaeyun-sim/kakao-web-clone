@@ -11,7 +11,7 @@ const Trigger = ({ children, isFirstItem = false }: PropsWithChildren<IProps>) =
 	const { isOpen, toggle } = useAccordion();
 
 	return (
-    <Container onClick={toggle} isFirstItem={isFirstItem} isOpen={isOpen}>
+    <Container onClick={toggle} isFirstItem={isFirstItem} isOpen={isOpen} aria-label='아코디언 열기'>
       {children}
       <Icon
         iconName={isOpen ? '/to-top' : '/to-bottom'}

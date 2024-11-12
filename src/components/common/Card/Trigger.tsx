@@ -9,7 +9,7 @@ const Trigger = () => {
 	if (isMenuOpen) return null;
 
 	return (
-    <CardTrigger onClick={onOpenMenu}>
+    <CardTrigger onClick={onOpenMenu} aria-label='카드 옵션 열기'>
       <Icon iconName="options" style={{ width: 24, height: 24 }} />
     </CardTrigger>
   );

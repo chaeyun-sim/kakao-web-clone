@@ -89,13 +89,21 @@ const StoryArea = () => {
       >
         {!isMobileScreen && (
           <PlayIconWrapper>
-            <PlayIcon isPlaying={stopPlaying} onClick={togglePlay} />
+            <PlayIcon
+              isPlaying={stopPlaying}
+              onClick={togglePlay}
+              aria-label="캐러셀 자동 플레이 아이콘"
+            />
           </PlayIconWrapper>
         )}
       </SectionTitle>
       {isMobileScreen && (
         <PlayIconWrapper>
-          <PlayIcon isPlaying={stopPlaying} onClick={togglePlay} />
+          <PlayIcon
+            isPlaying={stopPlaying}
+            onClick={togglePlay}
+            aria-label="캐러셀 자동 플레이 아이콘"
+          />
         </PlayIconWrapper>
       )}
       <SlideWrapper

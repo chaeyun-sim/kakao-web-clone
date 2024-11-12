@@ -24,7 +24,7 @@ const ResponsibleArea = () => {
             </TopBox>
             <Image isFirst={index === 0} src={item.imageUrl} />
             <Text style={{ color: item.textColor }}>{item.text}</Text>
-            <ClickButton>
+            <ClickButton aria-label='이동하기'>
               <Icon iconName="go-button-sm" />
             </ClickButton>
           </ResponsibleBox>

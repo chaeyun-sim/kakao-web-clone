@@ -133,7 +133,6 @@ export const Wrapper = styled.div<{
 
   &::after {
     content: '';
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 124'%3E%3Cpath d='M26 0H0v2c8.8 0 16 7.2 16 16v87.4c1 5.9 4.3 11.1 9 14.5-4.8 0-9.4-1-13.5-2.8-2.9 3-7 4.9-11.5 4.9v2h28V0h-2z' fill='%23fff' fill-rule='evenodd' clip-rule='evenodd'/%3E%3C/svg%3E");
     width: 39px;
     height: 168px;
     position: absolute;
@@ -141,17 +140,22 @@ export const Wrapper = styled.div<{
     top: -2px;
     z-index: 2;
     background-color: ${({ fillColor }) => fillColor};
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 124'%3E%3Cpath d='M26 0H0v2c8.8 0 16 7.2 16 16v87.4c1 5.9 4.3 11.1 9 14.5-4.8 0-9.4-1-13.5-2.8-2.9 3-7 4.9-11.5 4.9v2h28V0h-2z' fill='%23fff' fill-rule='evenodd' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 28px 124px;
 
     ${mediaQuery.large`
       width: 36px;
       height: 128px;
       background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 128'%3E%3Cpath d='M33.3 119.9c-5.1 0-9.9-1.1-14.3-3.2-4.4 5.7-11.3 9.3-19 9.3v2h36V0H0v2c13.3 0 24 10.7 24 24v76.9c.4 7 3.9 13.1 9.3 17' fill='%23fff' fill-rule='evenodd' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: 36px 128px;
     `}
 
     ${mediaQuery.medium`
       background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 124'%3E%3Cpath d='M26 0H0v2c8.8 0 16 7.2 16 16v87.4c1 5.9 4.3 11.1 9 14.5-4.8 0-9.4-1-13.5-2.8-2.9 3-7 4.9-11.5 4.9v2h28V0h-2z' fill='%23fff' fill-rule='evenodd' clip-rule='evenodd'/%3E%3C/svg%3E");
       width: 28px;
       height: 124px;
+      background-size: 28px 124px;
     `}
 
     ${mediaQuery.small`
@@ -470,19 +474,20 @@ export const SliderItemWrapper = styled.div`
 `;
 
 export const PrevArrow = styled.button`
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath d='M19 20.59L14.42 16 19 11.41 17.59 10l-6 6 6 6L19 20.59z' fill='%23000'/%3E%3C/svg%3E");
   position: absolute;
   top: -1.5px;
   width: 32px;
   height: 32px;
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 32px 32px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath d='M19 20.59L14.42 16 19 11.41 17.59 10l-6 6 6 6L19 20.59z' fill='%23000'/%3E%3C/svg%3E");
   left: 0px;
 `;
 
 export const NextArrow = styled.button`
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath d='M13 20.59L17.58 16 13 11.41 14.41 10l6 6-6 6L13 20.59z' fill='%23000'/%3E%3C/svg%3E");
+  background-size: 32px 32px;
   position: absolute;
   top: -2px;
   width: 32px;
@@ -500,4 +505,21 @@ export const Slides = styled.span`
   line-height: 32px;
   font-size: 12px;
   color: ${({ theme }) => theme.color.gray[300]};
+`;
+
+export const CarouselImage = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+`;
+
+export const YellowContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #fae100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;
