@@ -9,7 +9,7 @@
 <br />
 
 ### 🔗 배포 링크
-[kakao-web-clone.vercel.app/](kakao-web-clone.vercel.app/)
+[https://kakao-web-clone.vercel.app/](https://kakao-web-clone.vercel.app/)
 
 <br />
 
