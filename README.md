@@ -8,8 +8,13 @@
 
 <br />
 
-### 🔗 배포 링크
-[https://kakao-web-clone.vercel.app/](https://kakao-web-clone.vercel.app/)
+## 설치
+```
+$ git clone https://github.com/chaeyun-sim/kakao-web-clone.git
+$ npm install
+$ npm run start
+```
+[배포 환경 👉](https://kakao-web-clone.vercel.app/)
 
 <br />
 
